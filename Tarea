@@ -1,0 +1,34 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+business = pd.read_csv('fiuba_4_postulaciones.csv')
+business.head()
+
+business_index = business.index
+business_columns = business.columns
+business_data = business.values
+
+business_columns
+
+business.dtypes
+
+business.isnull().any()
+
+business['fechapostulacion'].describe()
+
+business['fechapostulacion'] = pd.to_datetime(business['fechapostulacion'])
+
+business['fechapostulacion'].dt.weekday_name
+
+business['dia_semana'] = pd.to_datetime(business['fechapostulacion'])
+business['dia_semana'].dt.weekday_name
+
+
+
+
+
+
+
